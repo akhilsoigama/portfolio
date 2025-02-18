@@ -36,7 +36,7 @@ const Skills = () => {
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <Card className="px-6 py-3 mt-20 flex items-center gap-2  backdrop-blur-md shadow-lg">
+                                <Card className="p-4 mt-20 flex items-center gap-2  backdrop-blur-md shadow-lg">
                                     <Image src={skill.icon} alt={skill.name} width={24} height={24} />
                                     <CardContent className="p-0">{skill.name}</CardContent>
                                 </Card>
