@@ -13,7 +13,7 @@ const Education = () => {
             years: "2018 - 2019",
         },
         {
-            title: "12th",
+            title: "HSC",
             description: "Lions higher secondary school manavadar",
             years: "2020 - 2021",
         },

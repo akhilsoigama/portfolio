@@ -83,7 +83,7 @@ const HeroContent = () => {
                 transition={{ duration: 0.5, ease: "easeOut", delay: 1.5 }}
                 className="flex gap-4"
                 >
-                <Link href="https://github.com/your-profile" passHref>
+                <Link href="https://discord.com/channels/@me" target="_blank" passHref>
                   <button className="bg-white hover:scale-105 p-2 rounded-lg  mt-4">
                     <img
                       src="/github-142-svgrepo-com.svg"
@@ -95,7 +95,7 @@ const HeroContent = () => {
                     />
                   </button>
                 </Link>
-                <Link href="https://github.com/your-profile" passHref>
+                <Link href="https://www.youtube.com/@science_panther" target="_blank" passHref>
                   <button className=" bg-white hover:scale-105 p-2 rounded-lg  mt-4">
                     <img
                       src="/youtube-svgrepo-com.svg"
@@ -106,7 +106,7 @@ const HeroContent = () => {
                     />
                   </button>
                 </Link>
-                <Link href="https://github.com/your-profile" passHref>
+                <Link href="https://www.instagram.com/akhil_soigama_/" target="_blank" passHref>
                   <button className=" bg-white p-2 rounded-lg hover:scale-105 mt-4">
                     <img
                       src="https://banner2.cleanpng.com/20240112/pil/transparent-instagram-logo-colorful-camera-with-red-light-on-black-1710926114455.webp"
