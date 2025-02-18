@@ -29,14 +29,14 @@ const Skills = () => {
                 <Typography variant="h4" className="text-center mt-4">
                     Frontend Skills
                 </Typography>
-                <Grid container spacing={2} justifyContent="center">
+                <Grid container spacing={2} justifyContent="center" marginTop={5}>
                     {skills.map((skill, index) => (
                         <Grid item key={index}>
                             <motion.div
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <Card className="p-4 mt-20 flex items-center gap-2  backdrop-blur-md shadow-lg">
+                                <Card className="p-4  flex items-center gap-2  backdrop-blur-md shadow-lg">
                                     <Image src={skill.icon} alt={skill.name} width={24} height={24} />
                                     <CardContent className="p-0">{skill.name}</CardContent>
                                 </Card>
