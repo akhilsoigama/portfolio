@@ -3,6 +3,9 @@ import React from "react";
 import PortfolioHeader from "./PortfolioHeader";
 import HeroContent from "./HeroContent";
 import Skills from "./Skills";
+import Education from "./Education";
+import Experience from "./Experience";
+import LifeSkills from "./LifeSkills";
 
 const Hero = () => {
     return (
@@ -37,6 +40,16 @@ const Hero = () => {
             <div className="relative top-14 z-20"> 
                 <Skills />
             </div>
+            <div className="relative top-14 z-20"> 
+                <LifeSkills/>
+            </div>
+            <div className="relative top-14 z-20"> 
+               <Education/>
+            </div>
+            <div className="relative top-14 z-20"> 
+                <Experience/>
+            </div>
+           
         </div>
     );
 };

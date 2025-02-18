@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
+        >    
           {children}
         </ThemeProvider>
       </body>

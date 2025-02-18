@@ -1,12 +1,12 @@
 import Hero from "./components/Hero";
-import Sphere from "./components/Sphere";
+import StarBackground from "./components/StarBackground";
 
 
 export default function Home() {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen scrollbar-hidden ">
       {/* <Sphere/> */}
-    <Hero/>
+      <Hero />
     </div>
   );
 }

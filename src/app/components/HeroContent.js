@@ -5,11 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Typography } from "@mui/material";
 import { SparkleIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const HeroContent = () => {
   return (
-    <div className="relative top-14 w-full h-full  bg-black/40">
-      <div className="relative w-full h-full flex flex-col md:flex-row justify-between items-center z-20 px-4 bg-black/40 py-12 md:py-20">
+    <div className="relative top-14 w-full h-full bg-black/40">
+      <div className="relative w-full h-full flex flex-col md:flex-row justify-between items-center z-20 px-4 py-12 md:py-20">
         <div className="max-w-7xl mx-auto flex-1 flex flex-col md:flex-row justify-between items-center">
           <motion.div
             className="md:w-1/2 text-left"
@@ -76,6 +77,48 @@ const HeroContent = () => {
                 <Button className="px-8 py-3 text-lg font-semibold rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:scale-105 transition-transform duration-300">
                   Get Started
                 </Button>
+                <motion.div
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: 1.5 }}
+                className="flex gap-4"
+                >
+                <Link href="https://github.com/your-profile" passHref>
+                  <button className="bg-white hover:scale-105 p-2 rounded-lg  mt-4">
+                    <img
+                      src="/github-142-svgrepo-com.svg"
+                      alt="GitHub"
+                      width={24}
+                      height={24}
+                      className="hover:scale-105"
+
+                    />
+                  </button>
+                </Link>
+                <Link href="https://github.com/your-profile" passHref>
+                  <button className=" bg-white hover:scale-105 p-2 rounded-lg  mt-4">
+                    <img
+                      src="/youtube-svgrepo-com.svg"
+                      alt="GitHub"
+                      width={24}
+                      height={24}
+                      className="hover:scale-105"
+                    />
+                  </button>
+                </Link>
+                <Link href="https://github.com/your-profile" passHref>
+                  <button className=" bg-white p-2 rounded-lg hover:scale-105 mt-4">
+                    <img
+                      src="https://banner2.cleanpng.com/20240112/pil/transparent-instagram-logo-colorful-camera-with-red-light-on-black-1710926114455.webp"
+                      alt="GitHub"
+                      width={24}
+                      height={24}
+                      className="hover:scale-105"
+
+                    />
+                  </button>
+                </Link>
+                </motion.div>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -95,10 +138,8 @@ const HeroContent = () => {
             />
           </motion.div>
         </div>
-
       </div>
     </div>
-
   );
 };
 
