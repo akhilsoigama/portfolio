@@ -6,7 +6,7 @@ import Skills from "./Skills";
 
 const Hero = () => {
     return (
-        <div className="relative w-full min-h-screen flex flex-col overflow-hidden">
+        <div className="relative w-full min-h-screen flex flex-col overflow-scroll">
             <PortfolioHeader />
 
             {/* <div className="absolute top-[-280px] left-0 w-full bg-blend-multiply bg-slate-700 h-screen z-10"> 
@@ -31,10 +31,10 @@ const Hero = () => {
                 />
             </div>
 
-            <div className="relative z-20"> 
+            <div className="z-20"> 
                 <HeroContent />
             </div>
-            <div className="relative z-20"> 
+            <div className="relative top-14 z-20"> 
                 <Skills />
             </div>
         </div>
