@@ -46,28 +46,28 @@ const Experience = () => {
               />
             </motion.div>
 
-            <div className="p-6 space-y-4 bg-black/70 backdrop-blur-md rounded-b-xl">
+            <div className="p-6 space-y-4 dark:bg-black/70 backdrop-blur-md rounded-b-xl">
               <Typography
                 variant="h4"
-                className="text-2xl font-semibold text-white hover:text-indigo-400 transition duration-300 font-sans"
+                className="text-2xl font-semibold dark:text-white hover:text-indigo-400 transition duration-300 font-sans"
               >
                 {exp.title}
               </Typography>
               <Typography
                 variant="h6"
-                className="text-lg text-gray-300 font-sans"
+                className="text-lg dark:text-gray-300 font-sans"
               >
                 {exp.company}
               </Typography>
               <Typography
                 variant="body1"
-                className="text-gray-400 italic font-serif"
+                className="dark:text-gray-400 italic font-serif"
               >
                 {exp.duration}
               </Typography>
               <Typography
                 variant="body2"
-                className="text-gray-200 mt-4 font-sans"
+                className="dark:text-gray-200 mt-4 font-sans"
               >
                 {exp.description}
               </Typography>

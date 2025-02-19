@@ -11,7 +11,7 @@ const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
 const skills = [
     { name: "HTML", icon: "/html.png" },
     { name: "CSS", icon: "/css.png" },
-    { name: "JavaScript", icon: "/js.png" },
+    { name: "Java Script", icon: "/js.png" },
     { name: "React", icon: "/react.png" },
     { name: "Next.js", icon: "/next.png" },
     { name: "Redux", icon: "/redux.png" },
@@ -46,13 +46,13 @@ const Skills = () => {
                     sx={{ padding: { xs: "10px", md: "20px" } }}
                 >
                     {skills.map((skill, index) => (
-                        <Grid item key={index} xs={6} sm={4} md={3} lg={2}>
+                        <Grid item key={index} xs={8} sm={4} md={3} lg={3}>
                             <motion.div
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <Card
-                                    className="p-4 flex items-center gap-2 backdrop-blur-md shadow-lg"
+                                    className="p-4 flex items-center justify-center gap-2 backdrop-blur-md shadow-lg"
                                     sx={{
                                         backgroundColor: "rgba(255, 255, 255, 0.1)",
                                         border: "1px solid rgba(255, 255, 255, 0.2)",
@@ -66,16 +66,17 @@ const Skills = () => {
                                     <img
                                         src={skill.icon}
                                         alt={skill.name}
-                                        width={32}
-                                        height={32}
-                                        className="object-contain"
+                                        width={40}
+                                        height={40}
+                                        className="object-cover "
                                     />
                                     <CardContent
-                                        className="p-0"
+                                        className="p-0 text-2xl"
                                         sx={{
                                             fontFamily: roboto.style.fontFamily,
                                             fontWeight: 500,
                                             color: "#fff",
+                                            
                                         }}
                                     >
                                         {skill.name}
