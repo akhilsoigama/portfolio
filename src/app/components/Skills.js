@@ -20,7 +20,7 @@ const skills = [
 
 const Skills = () => {
     return (
-        <div className="dark:bg-black/40 p-4 w-full h-full">
+        <section className="dark:bg-black/40 p-2 md:p-4 w-full h-full" id="skills">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ const Skills = () => {
                     sx={{
                         fontFamily: inter.style.fontFamily,
                         fontWeight: 700,
-                      
+
                         marginBottom: "20px",
                     }}
                 >
@@ -43,7 +43,7 @@ const Skills = () => {
                     spacing={3}
                     justifyContent="center"
                     marginTop={5}
-                    sx={{ padding: { xs: "10px", md: "20px" } }}
+                    sx={{ padding: { xs: "2px", md: "2px" } }}
                 >
                     {skills.map((skill, index) => (
                         <Grid item key={index} xs={8} sm={4} md={3} lg={3}>
@@ -76,7 +76,7 @@ const Skills = () => {
                                             fontFamily: roboto.style.fontFamily,
                                             fontWeight: 500,
                                             color: "#fff",
-                                            
+
                                         }}
                                     >
                                         {skill.name}
@@ -87,7 +87,7 @@ const Skills = () => {
                     ))}
                 </Grid>
             </motion.div>
-        </div>
+        </section>
     );
 };
 

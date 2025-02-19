@@ -1,10 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@mui/material";
 import { SparkleIcon } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { Inter, Poppins } from "next/font/google";
 
@@ -14,7 +12,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600", "700"] });
 const HeroContent = () => {
 
   return (
-    <div className="w-full h-full dark:bg-black/40">
+    <section className="w-full h-full dark:bg-black/40" id="home">
       <div className="relative w-full h-full flex flex-col md:flex-row justify-center items-center z-20 px-4 py-12 md:py-20">
         <div className="max-w-7xl mx-auto flex-1 flex flex-col md:flex-row justify-center items-center gap-8">
           <motion.div
@@ -83,9 +81,9 @@ const HeroContent = () => {
                 transition={{ duration: 0.5, ease: "easeOut", delay: 1.5 }}
                 className="mt-8 flex flex-col sm:flex-row gap-4"
               >
-                <Button className="px-8 py-3 text-lg font-semibold rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:scale-105 transition-transform duration-300">
+                {/* <Button className="px-8 py-3 text-lg font-semibold rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:scale-105 transition-transform duration-300">
                   Get Started
-                </Button>
+                </Button> */}
                 <div className="flex gap-4">
                   <Link
                     href="https://discord.com/channels/@me"
@@ -172,7 +170,7 @@ const HeroContent = () => {
           </motion.div> */}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

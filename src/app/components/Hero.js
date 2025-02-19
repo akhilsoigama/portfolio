@@ -6,7 +6,8 @@ import Skills from "./Skills";
 import Education from "./Education";
 import Experience from "./Experience";
 import LifeSkills from "./LifeSkills";
-// import SkillsSection from "./SkillSelection";
+import ContactPage from "./Contact";
+import Footer from "./Footer";
 
 const Hero = () => {
     return (
@@ -32,7 +33,6 @@ const Hero = () => {
 
             <div className="relative z-30">
                 <Skills />
-                {/* <SkillsSection/> */}
             </div>
 
             <div className="relative z-30">
@@ -45,6 +45,12 @@ const Hero = () => {
 
             <div className="relative z-30">
                 <Experience />
+            </div>
+            <div className="relative z-30">
+                <ContactPage />
+            </div>
+            <div className="relative z-30">
+                <Footer />
             </div>
         </div>
     );

@@ -74,9 +74,7 @@ const LifeSkills = () => {
                 >
                   {skill.description}
                 </Typography>
-                <Button className="mt-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
-                  Learn More
-                </Button>
+               
               </div>
             </div>
           </motion.div>
