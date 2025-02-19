@@ -49,7 +49,7 @@ const LifeSkills = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
-            viewport={{ once: true }}
+            viewport={{ once: true }}  
             className="flex justify-center"
           >
             <div className="w-full max-w-sm backdrop-blur-lg dark:bg-black/30 p-6 dark:border border-gray-800 rounded-xl shadow-2xl hover:shadow-purple-500/30 transition duration-300">
