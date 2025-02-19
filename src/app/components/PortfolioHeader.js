@@ -1,17 +1,22 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "../Darkmode/Darkmode";
-import { Button } from "@/components/ui/button";  
+import { Button } from "@/components/ui/button";
+import { Inter, Lobster, Oleo_Script, Roboto } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
+const oleo = Oleo_Script({subsets: ["latin"], weight: ["400", "700"] })
 
 const PortfolioHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <motion.header
-      className="p-4 w-full fixed top-0 z-50 backdrop-blur-lg shadow-md bg-transparent"
+      className="p-4 w-full sticky top-0 z-50 backdrop-blur-lg shadow-md "
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -22,6 +27,7 @@ const PortfolioHeader = () => {
           initial={{ x: -50 }}
           animate={{ x: 0 }}
           transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
+          style={{ fontFamily: oleo.style.fontFamily }}
         >
           Akhil
         </motion.div>
@@ -36,8 +42,12 @@ const PortfolioHeader = () => {
             <motion.div
               key={item}
               className="text-black dark:text-white hover:text-blue-600 transition"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
             >
-              <Button variant="ghost">{item}</Button>
+              <Button variant="ghost" style={{ fontFamily: roboto.style.fontFamily }}>
+                {item}
+              </Button>
             </motion.div>
           ))}
           <ModeToggle />
@@ -50,25 +60,41 @@ const PortfolioHeader = () => {
           transition={{ delay: 0.4 }}
         >
           <ModeToggle />
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <Sheet open={isOpen} onOpenChange={setIsOpen} >
             <SheetTrigger className="text-black dark:text-white focus:outline-none text-2xl">
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </SheetTrigger>
-            <SheetContent side="right" className="bg-white dark:bg-black w-full">
+            <SheetContent
+              side="top"
+              className="bg-white dark:bg-black w-full h-[100vh]"
+            >
               <SheetHeader>
-                <SheetTitle className="text-lg font-semibold text-black dark:text-white">
+                <SheetTitle
+                  className="text-lg font-semibold text-black dark:text-white"
+                  style={{ fontFamily: inter.style.fontFamily }}
+                >
                   Menu
                 </SheetTitle>
               </SheetHeader>
               <motion.ul
                 className="mt-4 flex flex-col space-y-4 text-lg"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                {["Home", "skills", "Services", "Contact"].map((item) => (
-                  <motion.li key={item} whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
-                    <Button variant="ghost">{item}</Button>
+                {["Home", "Skills", "Services", "Contact"].map((item) => (
+                  <motion.li
+                    key={item}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Button
+                      variant="ghost"
+                      className="w-full text-left"
+                      style={{ fontFamily: roboto.style.fontFamily }}
+                    >
+                      {item}
+                    </Button>
                   </motion.li>
                 ))}
               </motion.ul>

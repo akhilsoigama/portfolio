@@ -1,34 +1,46 @@
-// 'use client';
-// import { PointMaterial, Points } from '@react-three/drei';
-// import { useFrame } from '@react-three/fiber';
-// import React, { useRef, useState } from 'react';
-// import * as random from 'maath/random/dist/maath-random.esm'
+'use client';
+import { useEffect, useState } from 'react';
 
-// const StarBackground = (props) => {
-//     const ref = useRef();
-//     const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.2 }));
+const StarBackground = () => {
+  const [stars, setStars] = useState([]);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-//     useFrame((state, delta) => {
-//         if (ref.current) {
-//             ref.current.rotation.x -= delta / 10;
-//             ref.current.rotation.y -= delta / 15;
-//         }
-//     });
+  useEffect(() => {
+    const generateStars = () => {
+      const starCount = 100;
+      const newStars = [];
+      for (let i = 0; i < starCount; i++) {
+        const size = Math.random() * 3 + 1;
+        const top = Math.random() * 100; 
+        const left = Math.random() * 100;
+        const delay = Math.random() * 2; 
+        const duration = Math.random() * 5 + 5; 
+        newStars.push({ size, top, left, delay, duration });
+      }
+      setStars(newStars);
+    };
 
-//     return (
-//         <group rotation={[0, 0, Math.PI / 4]}>
-//             <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
-                
-//                 <PointMaterial
-//                     transparent
-//                     color="#fff"
-//                     size={0.002}
-//                     sizeAttenuation={true}
-//                     depthWrite={false}
-//                 />
-//             </Points>
-//         </group>
-//     );
-// };
+    generateStars();
+  }, []);
 
-// export default StarBackground;
+  return (
+    <div className={`fixed inset-0 overflow-hidden z-20 ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+      {stars.map((star, index) => (
+        <div
+          key={index}
+          className="star"
+          style={{
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            top: `${star.top}%`,
+            left: `${star.left}%`,
+            animation: `moveStar ${star.duration}s linear ${star.delay}s infinite, ${isDarkMode ? '' : 'hueRotate 10s linear infinite'}`,
+          }}
+        />
+      ))}
+      
+    </div>
+  );
+};
+
+export default StarBackground;

@@ -103,3 +103,49 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+}
+
+
+
+.dark-mode .star {
+  background-color: white;
+  box-shadow: 0 0 10px white, 0 0 20px white;
+}
+
+
+.light-mode .star {
+  background-color: gold;
+  box-shadow: 0 0 10px gold, 0 0 20px gold;
+}
+
+@keyframes moveStar {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  animation: moveStar linear infinite;
+}
