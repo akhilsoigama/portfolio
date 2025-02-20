@@ -1,8 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { TextField, Container, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import ContactInfo from './Info';
 
 const containerVariants = {
@@ -14,10 +16,37 @@ const formItemVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
-
-
-
 export default function ContactPage() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [id]: value,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const serviceID = "service_md48zkj";
+        const templateID = "template_db4vd1u";
+        const userID = "HKmqq_Z97XBZbp6hR";
+        try {
+            await emailjs.send(serviceID, templateID, formData, userID);
+            alert('Message sent successfully!');
+            setFormData({ name: '', email: '', message: '' });
+        } catch (error) {
+            console.error('Failed to send message:', error);
+            alert('Failed to send message. Please try again.');
+        }
+    };
+
     return (
         <div className="w-full min-h-screen dark:bg-black/40 py-12 pb-16" id='contact'>
             <Container maxWidth="lg">
@@ -46,13 +75,15 @@ export default function ContactPage() {
                                 We can do so much together. <span className="underline decoration-blue-500 dark:decoration-blue-400">Let's talk.</span>
                             </span>
                         </Typography>
-                        <form className="w-full space-y-6 mt-8">
+                        <form className="w-full space-y-6 mt-8" onSubmit={handleSubmit}>
                             <motion.div variants={formItemVariants}>
                                 <TextField
                                     id="name"
                                     label="Name"
                                     variant="standard"
                                     fullWidth
+                                    value={formData.name}
+                                    onChange={handleChange}
                                     className="dark:[&_.MuiInputBase-input]:text-white dark:[&_.MuiInputLabel-root]:text-white dark:[&_.MuiInput-underline:before]:border-white"
                                     sx={{
                                         '& .MuiInputBase-input': { color: 'black' },
@@ -67,6 +98,8 @@ export default function ContactPage() {
                                     label="Email"
                                     variant="standard"
                                     fullWidth
+                                    value={formData.email}
+                                    onChange={handleChange}
                                     className="dark:[&_.MuiInputBase-input]:text-white dark:[&_.MuiInputLabel-root]:text-white dark:[&_.MuiInput-underline:before]:border-white"
                                     sx={{
                                         '& .MuiInputBase-input': { color: 'black' },
@@ -83,6 +116,8 @@ export default function ContactPage() {
                                     fullWidth
                                     multiline
                                     rows={4}
+                                    value={formData.message}
+                                    onChange={handleChange}
                                     className="dark:[&_.MuiInputBase-input]:text-white dark:[&_.MuiInputLabel-root]:text-white dark:[&_.MuiInput-underline:before]:border-white"
                                     sx={{
                                         '& .MuiInputBase-input': { color: 'black' },
