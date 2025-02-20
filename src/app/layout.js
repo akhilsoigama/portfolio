@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./Darkmode/ThemeProvider";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -60,7 +61,13 @@ export default function RootLayout({ children }) {
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >    
+        >   
+        <Toaster
+            position="top-right"
+            toastOptions={{
+              duration: 3000,
+            }} />
+ 
           {children}
         </ThemeProvider>
       </body>

@@ -6,6 +6,7 @@ import { TextField, Container, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import ContactInfo from './Info';
+import { toast } from 'sonner';
 
 const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -37,13 +38,14 @@ export default function ContactPage() {
         const serviceID = "service_md48zkj";
         const templateID = "template_db4vd1u";
         const userID = "HKmqq_Z97XBZbp6hR";
+        
         try {
             await emailjs.send(serviceID, templateID, formData, userID);
-            alert('Message sent successfully!');
+            toast.success('Message sent successfully!');
             setFormData({ name: '', email: '', message: '' });
         } catch (error) {
             console.error('Failed to send message:', error);
-            alert('Failed to send message. Please try again.');
+            toast.error('Failed to send message. Please try again.');
         }
     };
 
