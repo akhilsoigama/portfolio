@@ -35,12 +35,7 @@ const LifeSkills = () => {
 
   return (
     <Box className="dark:bg-black/40 py-20 px-4 w-full mx-auto rounded-xl">
-      <Typography
-        variant="h3"
-        className={`text-center mb-16 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 ${poppins.className}`}
-      >
-        Life Skills
-      </Typography>
+     
 
       <div className="grid grid-cols-1 mt-20 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {skills.map((skill, index) => (

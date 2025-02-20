@@ -36,7 +36,7 @@ const Skills = () => {
                         marginBottom: "20px",
                     }}
                 >
-                    Frontend Skills
+                Skills
                 </Typography>
                 <Grid
                     container

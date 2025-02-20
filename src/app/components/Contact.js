@@ -34,7 +34,7 @@ export default function ContactPage() {
                         <Typography
                             variant="h4"
                             component="h1"
-                            className="text-center mb-6 text-black dark:text-white transition-all duration-300 transform"
+                            className=" mb-6 text-black dark:text-white transition-all duration-300 transform"
                         >
                             <span className="block text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-500">
                                 Get in Touch

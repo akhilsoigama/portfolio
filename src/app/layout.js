@@ -13,10 +13,42 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Akhil Soigama",
-  description: "Create my portfolio webpage",
+  title: "Akhil Soigama - Portfolio",
+  description: "Welcome to my portfolio website. I'm a developer passionate about building amazing web experiences.",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.ico", 
+    apple: "/apple-touch-icon.png", 
+    shortcut: "/favicon-16x16.png",
+  },
+  openGraph: {
+    title: "Akhil Soigama - Portfolio",
+    description: "Welcome to my portfolio website. I'm a developer passionate about building amazing web experiences.",
+    url: "https://portfolio-akhilsoigamas-projects.vercel.app/", 
+    siteName: "Akhil Soigama",
+    images: [
+      {
+        url: "/android-chrome-512x512.png",
+        width: 1200,
+        height: 630,
+        alt: "Akhil Soigama Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+ 
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
