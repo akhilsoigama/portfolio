@@ -16,9 +16,9 @@ export const metadata = {
   title: "Akhil Soigama - Portfolio",
   description: "Welcome to my portfolio website. I'm a developer passionate about building amazing web experiences.",
   icons: {
-    icon: "/favicon.ico", 
-    apple: "/apple-touch-icon.png", 
-    shortcut: "/favicon-16x16.png",
+    icon: "https://portfolio-akhilsoigamas-projects.vercel.app/favicon.ico", 
+    apple: "https://portfolio-akhilsoigamas-projects.vercel.app/apple-touch-icon.png", 
+    shortcut: "https://portfolio-akhilsoigamas-projects.vercel.app/favicon-16x16.png",
   },
   openGraph: {
     title: "Akhil Soigama - Portfolio",
@@ -27,7 +27,7 @@ export const metadata = {
     siteName: "Akhil Soigama",
     images: [
       {
-        url: "/android-chrome-512x512.png",
+        url: "https://portfolio-akhilsoigamas-projects.vercel.app/android-chrome-512x512.png",
         width: 1200,
         height: 630,
         alt: "Akhil Soigama Portfolio",
@@ -36,7 +36,6 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
- 
   robots: {
     index: true,
     follow: true,
