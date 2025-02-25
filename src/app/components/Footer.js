@@ -17,7 +17,7 @@ const Footer = () => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="dark:bg-black/40 shadow-md bg-white border-t py-6 "
+      className="dark:bg-black/40 shadow-md bg-white/40 border-t py-6 "
     >
       <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center space-y-4">
         <p className="text-3xl font-semibold" style={{ fontFamily: oleo.style.fontFamily }}
