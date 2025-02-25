@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "../Darkmode/Darkmode";
@@ -82,27 +82,29 @@ const PortfolioHeader = () => {
             </SheetTrigger>
             <SheetContent
               side="top"
-              className="bg-white dark:bg-black w-full h-[100vh]"
+              className="w-full h-[100vh] backdrop-blur-lg bg-white/90 dark:bg-black/30"
             >
               <SheetHeader>
                 <SheetTitle
-                  className="text-lg font-semibold text-black dark:text-white"
+                  className="text-2xl font-semibold text-black dark:text-white"
                   style={{ fontFamily: inter.style.fontFamily }}
                 >
                   Menu
                 </SheetTitle>
               </SheetHeader>
               <motion.ul
-                className="mt-4 flex flex-col  space-y-6 text-xl"
+                className="mt-10   flex flex-col space-y-6 text-2xl"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                {["Home", "Skills", "Experience", "Contact"].map((item) => (
+                {["Home", "Skills", "Experience", "Contact"].map((item, index) => (
                   <motion.li
                     key={item}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 * index ,duration:0.2}}
                     whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
                   >
                     <ScrollLink
                       to={item.toLowerCase()}
@@ -119,17 +121,15 @@ const PortfolioHeader = () => {
                         {item}
                       </Button>
                     </ScrollLink>
-
                   </motion.li>
-
                 ))}
               </motion.ul>
               <motion.div
-                className=" flex mt-3 justify-center text-white hover:text-blue-600 transition"
+                className="flex mt-3 justify-center text-white hover:text-blue-600 transition"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <Link href={"https://fgtu.in/DSU1363"} target="_blank">  <button className="bg-rose-500 transition-colors duration-300 hover:bg-rose-700  px-5 py-2 rounded-sm">Hire Me</button></Link>
+                <Link href={"https://fgtu.in/DSU1363"} target="_blank">  <button className="bg-rose-500 transition-colors duration-300 hover:bg-rose-700 px-5 py-2 rounded-sm">Hire Me</button></Link>
               </motion.div>
             </SheetContent>
           </Sheet>
