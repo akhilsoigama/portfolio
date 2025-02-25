@@ -7,6 +7,16 @@ import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import ContactInfo from './Info';
 import { toast } from 'sonner';
+import { useForm, Controller } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+
+// Zod schema for form validation
+const schema = z.object({
+    name: z.string().min(1, { message: 'Name is required' }),
+    email: z.string().email({ message: 'Invalid email address' }),
+    message: z.string().min(1, { message: 'Message is required' }),
+});
 
 const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -17,32 +27,31 @@ const formItemVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
+
 export default function ContactPage() {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: '',
+    const {
+        control,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm({
+        resolver: zodResolver(schema),
+        defaultValues: {
+            name: '',
+            email: '',
+            message: '',
+        },
     });
 
-    const handleChange = (e) => {
-        const { id, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [id]: value,
-        }));
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
+    const onSubmit = async (data) => {
         const serviceID = "service_md48zkj";
         const templateID = "template_db4vd1u";
         const userID = "HKmqq_Z97XBZbp6hR";
-        
+
         try {
-            await emailjs.send(serviceID, templateID, formData, userID);
+            await emailjs.send(serviceID, templateID, data, userID);
             toast.success('Message sent successfully!');
-            setFormData({ name: '', email: '', message: '' });
+            reset();
         } catch (error) {
             console.error('Failed to send message:', error);
             toast.error('Failed to send message. Please try again.');
@@ -77,55 +86,76 @@ export default function ContactPage() {
                                 We can do so much together. <span className="underline decoration-blue-500 dark:decoration-blue-400">Let's talk.</span>
                             </span>
                         </Typography>
-                        <form className="w-full space-y-6 mt-8" onSubmit={handleSubmit}>
+                        <form className="w-full space-y-6 mt-8" onSubmit={handleSubmit(onSubmit)}>
                             <motion.div variants={formItemVariants}>
-                                <TextField
-                                    id="name"
-                                    label="Name"
-                                    variant="standard"
-                                    fullWidth
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    className="dark:[&_.MuiInputBase-input]:text-white dark:[&_.MuiInputLabel-root]:text-white dark:[&_.MuiInput-underline:before]:border-white"
-                                    sx={{
-                                        '& .MuiInputBase-input': { color: 'black' },
-                                        '& .MuiInputLabel-root': { color: 'black' },
-                                        '& .MuiInput-underline:before': { borderBottomColor: 'black' },
-                                    }}
+                                <Controller
+                                    name="name"
+                                    control={control}
+                                    render={({ field }) => (
+                                        <TextField
+                                            {...field}
+                                            id="name"
+                                            label="Name"
+                                            variant="standard"
+                                            fullWidth
+                                            error={!!errors.name}
+                                            helperText={errors.name?.message}
+                                            className="dark:[&_.MuiInputBase-input]:text-white dark:[&_.MuiInputLabel-root]:text-white dark:[&_.MuiInput-underline:before]:border-white"
+                                            sx={{
+                                                '& .MuiInputBase-input': { color: 'black' },
+                                                '& .MuiInputLabel-root': { color: 'black' },
+                                                '& .MuiInput-underline:before': { borderBottomColor: 'black' },
+                                            }}
+                                        />
+                                    )}
                                 />
                             </motion.div>
                             <motion.div variants={formItemVariants}>
-                                <TextField
-                                    id="email"
-                                    label="Email"
-                                    variant="standard"
-                                    fullWidth
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    className="dark:[&_.MuiInputBase-input]:text-white dark:[&_.MuiInputLabel-root]:text-white dark:[&_.MuiInput-underline:before]:border-white"
-                                    sx={{
-                                        '& .MuiInputBase-input': { color: 'black' },
-                                        '& .MuiInputLabel-root': { color: 'black' },
-                                        '& .MuiInput-underline:before': { borderBottomColor: 'black' },
-                                    }}
+                                <Controller
+                                    name="email"
+                                    control={control}
+                                    render={({ field }) => (
+                                        <TextField
+                                            {...field}
+                                            id="email"
+                                            label="Email"
+                                            variant="standard"
+                                            fullWidth
+                                            error={!!errors.email}
+                                            helperText={errors.email?.message}
+                                            className="dark:[&_.MuiInputBase-input]:text-white dark:[&_.MuiInputLabel-root]:text-white dark:[&_.MuiInput-underline:before]:border-white"
+                                            sx={{
+                                                '& .MuiInputBase-input': { color: 'black' },
+                                                '& .MuiInputLabel-root': { color: 'black' },
+                                                '& .MuiInput-underline:before': { borderBottomColor: 'black' },
+                                            }}
+                                        />
+                                    )}
                                 />
                             </motion.div>
                             <motion.div variants={formItemVariants}>
-                                <TextField
-                                    id="message"
-                                    label="Message"
-                                    variant="standard"
-                                    fullWidth
-                                    multiline
-                                    rows={4}
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    className="dark:[&_.MuiInputBase-input]:text-white dark:[&_.MuiInputLabel-root]:text-white dark:[&_.MuiInput-underline:before]:border-white"
-                                    sx={{
-                                        '& .MuiInputBase-input': { color: 'black' },
-                                        '& .MuiInputLabel-root': { color: 'black' },
-                                        '& .MuiInput-underline:before': { borderBottomColor: 'black' },
-                                    }}
+                                <Controller
+                                    name="message"
+                                    control={control}
+                                    render={({ field }) => (
+                                        <TextField
+                                            {...field}
+                                            id="message"
+                                            label="Message"
+                                            variant="standard"
+                                            fullWidth
+                                            multiline
+                                            rows={4}
+                                            error={!!errors.message}
+                                            helperText={errors.message?.message}
+                                            className="dark:[&_.MuiInputBase-input]:text-white dark:[&_.MuiInputLabel-root]:text-white dark:[&_.MuiInput-underline:before]:border-white"
+                                            sx={{
+                                                '& .MuiInputBase-input': { color: 'black' },
+                                                '& .MuiInputLabel-root': { color: 'black' },
+                                                '& .MuiInput-underline:before': { borderBottomColor: 'black' },
+                                            }}
+                                        />
+                                    )}
                                 />
                             </motion.div>
                             <motion.div
