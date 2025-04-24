@@ -10,7 +10,7 @@ const StarBackground = () => {
       const starCount = 100;
       const newStars = [];
       for (let i = 0; i < starCount; i++) {
-        const size = Math.random() * 3 + 1;
+        const size = Math.random() * 2 + 1;
         const top = Math.random() * 100; 
         const left = Math.random() * 100;
         const delay = Math.random() * 2; 
