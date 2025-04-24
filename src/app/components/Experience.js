@@ -6,23 +6,31 @@ import { Typography, Box } from '@mui/material'
 const Experience = () => {
   const experienceData = [
     {
-      title: 'Frontend Developer',
+      title: 'Frontend Developer Intern',
+      company: 'SULOK DIGITAL SOLUTION PRIVATE LIMITED',
+      duration: '2023 - 2024',
+      description:
+      'During my internship, I worked on various front-end web applications and contributed to the development of multiple projects. I utilized my skills in HTML, CSS, JavaScript, and React to create responsive, interactive UI components, working closely with the design and backend teams to implement seamless user experiences.',
+      image:
+      'https://images.stockcake.com/public/5/e/6/5e6fb906-70e0-4ec9-9df9-fb564a8fec74_large/coder-at-work-stockcake.jpg',
+    },
+    {
+      title: 'Hospital Manegment System ',
       company: 'SULOK DIGITAL SOLUTION PRIVATE LIMITED',
       duration: '2024 - Present',
       description:
-        'I have completed my frontend internship, gaining experience in various technologies, including HTML, CSS, Bootstrap, Tailwind CSS, JavaScript, React, and Next.js.',
+        'As a frontend developer, I contributed to a Hospital Management System project at Sulok Digital Solution. My work involved designing and implementing user-friendly, responsive interfaces using technologies like react+vite and adonis js. The project focused on streamlining hospital operations and improving patient management through a modern, dynamic interface.',
       image:
-        'https://images.stockcake.com/public/5/e/6/5e6fb906-70e0-4ec9-9df9-fb564a8fec74_large/coder-at-work-stockcake.jpg',
+        'https://media.licdn.com/dms/image/v2/D5612AQE8lRG4T0M5JQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1681731881702?e=2147483647&v=beta&t=yzyCxUheIA2VYnqi2JFddNq6mVSJUgvD1mo1HXkzjRY',
     },
   ]
 
   return (
-
     <Box className="flex justify-center items-center flex-col py-16 px-4 w-full mx-auto overflow-hidden dark:bg-black/40">
       <section className='w-full h-full' id='experience'>
         <Typography
           variant="h3"
-          className=" mb-12 text-center text-4xl font-extrabold font-serif italic"
+          className="mb-12 text-center text-4xl font-extrabold font-serif italic"
         >
           Experience
         </Typography>
