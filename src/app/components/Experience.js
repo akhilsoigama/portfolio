@@ -8,7 +8,7 @@ const Experience = () => {
     {
       title: 'Frontend Developer Intern',
       company: 'SULOK DIGITAL SOLUTION PRIVATE LIMITED',
-      duration: '2023 - 2024',
+      duration: '2024 - 2025',
       description:
       'During my internship, I worked on various front-end web applications and contributed to the development of multiple projects. I utilized my skills in HTML, CSS, JavaScript, and React to create responsive, interactive UI components, working closely with the design and backend teams to implement seamless user experiences.',
       image:
@@ -17,7 +17,7 @@ const Experience = () => {
     {
       title: 'Hospital Manegment System ',
       company: 'SULOK DIGITAL SOLUTION PRIVATE LIMITED',
-      duration: '2024 - Present',
+      duration: '2025 - Present',
       description:
         'As a frontend developer, I contributed to a Hospital Management System project at Sulok Digital Solution. My work involved designing and implementing user-friendly, responsive interfaces using technologies like react+vite and adonis js. The project focused on streamlining hospital operations and improving patient management through a modern, dynamic interface.',
       image:
