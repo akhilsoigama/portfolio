@@ -8,6 +8,9 @@ import Experience from "./Experience";
 import LifeSkills from "./LifeSkills";
 import ContactPage from "./Contact";
 import Footer from "./Footer";
+import Certificate from "./Certificate";
+import SeminarAttended from "./Seminar";
+import Hobbies from "./Hobbies";
 
 const Hero = () => {
     return (
@@ -38,13 +41,21 @@ const Hero = () => {
             <div className="relative z-30">
                 <LifeSkills />
             </div>
-
+            <div className="relative z-30">
+                <Hobbies/>
+            </div>
             <div className="relative z-30">
                 <Education />
             </div>
-
             <div className="relative z-30">
                 <Experience />
+            </div>
+            {/* <div className="relative z-30">
+                <Certificate />
+            </div> */}
+
+            <div className="relative z-30">
+                <SeminarAttended/>
             </div>
             <div className="relative z-30">
                 <ContactPage />
