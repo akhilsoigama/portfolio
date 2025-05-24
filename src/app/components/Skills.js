@@ -9,30 +9,30 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
 
 const skills = [
-    { name: "HTML", icon: "/html.png", darkIcon: "/html.png" },
-    { name: "CSS", icon: "/css.png", darkIcon: "/css.png" },
-    { name: "JavaScript", icon: "/js.png", darkIcon: "/js.png" },
-    { name: "React", icon: "/react.png", darkIcon: "/react.png" },
-    { name: "Next.js", icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQktU9SiaDQGVr_kz8OL4Bzc7UT7UGnt_Yg_w&s", darkIcon: "https://img.icons8.com/fluent-systems-filled/512/FFFFFF/nextjs.png" },
-    { name: "Node.js", icon: "https://cdn-icons-png.flaticon.com/512/919/919825.png", darkIcon: "https://cdn-icons-png.flaticon.com/512/919/919825.png" },
-    { name: "Express.js", icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnDneBGnQL7E9hZDwztRO1GfQcCj1FqRrhBw&s", darkIcon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnDneBGnQL7E9hZDwztRO1GfQcCj1FqRrhBw&s" },
-    { name: "Redux", icon: "/redux.png", darkIcon: "/redux.png" },
-    { name: "Socket.io", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/1024px-Socket-io.svg.png", darkIcon: "https://static-00.iconduck.com/assets.00/socket-io-icon-512x511-xjp7kzx6.png" },
-    { name: "GitHub", icon: "https://cdn-icons-png.flaticon.com/512/25/25231.png", darkIcon: "/gitwhite.png" },
-    { name: "Git", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png", darkIcon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png" },
-    { name: "Tailwind CSS", icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm5tqU_Yrl1xJdcTC1JMLaPEy_El6FvAvlYDdhfsP1QjIAWO0ZrQIf8Y-YyP7wg6k1THo&usqp=CAU", darkIcon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png" },
-    { name: "Vercel", icon: "https://develop.finki.ukim.mk/projects/Caessino/export/87614a539b5a6d95f9aee8012bfdef4edeeb2fb5/public/favicon-vercel.ico", darkIcon: "https://develop.finki.ukim.mk/projects/Caessino/export/87614a539b5a6d95f9aee8012bfdef4edeeb2fb5/public/favicon-vercel.ico" },
-    { name: "Bootstrap", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/512px-Bootstrap_logo.svg.png", darkIcon: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/512px-Bootstrap_logo.svg.png" },
-    { name: "Laravel", icon: "https://cdn.worldvectorlogo.com/logos/laravel-2.svg", darkIcon: "https://cdn.worldvectorlogo.com/logos/laravel-2.svg" },
-    { name: "MongoDB", icon: "https://www.svgrepo.com/show/331488/mongodb.svg", darkIcon: "https://www.svgrepo.com/show/331488/mongodb.svg" },
-    { name: "MySQL", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968313.png", darkIcon: "https://cdn-icons-png.flaticon.com/512/5968/5968313.png" },
-    { name: "AdonisJS", icon: "https://cdn.worldvectorlogo.com/logos/adonisjs.svg", darkIcon: "https://cdn.worldvectorlogo.com/logos/adonisjs.svg" },  
-    { name: "Python", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png", darkIcon: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png" },
-    { name: "Pandas", icon: "https://pandas.pydata.org/static/img/pandas_mark.svg", darkIcon: "https://pandas.pydata.org/static/img/pandas_mark.svg" },
+    { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+    { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+    { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-white.svg" },
+    { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+    { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+    { name: "Redux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+    { name: "Socket.io", icon: "https://cdn.worldvectorlogo.com/logos/socket-io.svg", darkIcon: "https://cdn.worldvectorlogo.com/logos/socket-io.svg" },
+    { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-white.svg" },
+    { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
+    { name: "Vercel", icon: "https://assets.vercel.com/image/upload/v1607554385/repositories/vercel/logo.svg", darkIcon: "https://assets.vercel.com/image/upload/v1607554385/repositories/vercel/logo.svg" },
+    { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+    { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+    { name: "AdonisJS", icon: "https://cdn.worldvectorlogo.com/logos/adonisjs.svg", darkIcon: "https://cdn.worldvectorlogo.com/logos/adonisjs.svg" },
+    { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", darkIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { name: "Pandas", icon: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg", darkIcon: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg" },
     { name: "NumPy", icon: "https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg", darkIcon: "https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" },
-    { name: "Data Preprocessing", icon: "https://miro.medium.com/v2/resize:fit:948/0*brUcLeO-R7xlmF6t", darkIcon: "https://miro.medium.com/v2/resize:fit:948/0*brUcLeO-R7xlmF6t" },
-  ];
-  
+    { name: "Data Science", icon: "https://cdn-icons-png.flaticon.com/512/5408/5408783.png", darkIcon: "https://cdn-icons-png.flaticon.com/512/5408/5408783.png" }
+
+];
+
+
 
 const Skills = () => {
     // Animation variants for staggered entrance
@@ -91,7 +91,7 @@ const Skills = () => {
                                         scale: 1.05,
                                         boxShadow: "0 8px 24px rgba(0, 0, 0, 0.3)",
                                         transition: { duration: 0.3 },
-                                        borderRadius:"15px"
+                                        borderRadius: "15px"
                                     }}
                                     whileTap={{ scale: 0.95 }}
                                 >
