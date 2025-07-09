@@ -1,4 +1,5 @@
 'use client'
+import { Meteors } from '@/components/magicui/meteors';
 import { Tooltip } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Oleo_Script } from 'next/font/google';
