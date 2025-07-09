@@ -5,6 +5,7 @@ import { SparkleIcon } from "lucide-react";
 import Link from "next/link";
 import { Inter, Poppins } from "next/font/google";
 import { FadeIn, HoverScale, ScaleUp } from "../motion/Motion";
+import { TypingAnimation } from "@/components/magicui/typing-animation";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600", "700"] });
@@ -45,7 +46,9 @@ const HeroContent = () => {
                   component="h1"
                   className={`font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient ${poppins.className}`}
                 >
-                  AKHIL SOIGAMA
+                  <TypingAnimation>
+                    AKHIL SOIGAMA
+                  </TypingAnimation>
                 </Typography>
 
                 <FadeIn delay={0.7}>

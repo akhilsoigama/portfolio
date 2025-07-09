@@ -11,10 +11,12 @@ import Footer from "./Footer";
 import Certificate from "./Certificate";
 import SeminarAttended from "./Seminar";
 import Hobbies from "./Hobbies";
+import { ParticlesDemo } from "./Particles";
 
 const Hero = () => {
     return (
         <div className="relative w-full no-scrollbar min-h-screen flex flex-col overflow-scroll">
+            <ParticlesDemo/>
             <div className="fixed top-0 left-0 w-full h-screen z-0 dark:block hidden"> 
                 <video
                     className="rotate-180 w-full h-full object-cover"
