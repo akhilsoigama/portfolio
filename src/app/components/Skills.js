@@ -1,9 +1,10 @@
 'use client';
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Grid, Typography } from "@mui/material";
 import { Inter, Roboto } from "next/font/google";
+import { Confetti } from "@/components/magicui/confetti";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
@@ -50,6 +51,7 @@ const Skills = () => {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 },
     };
+    const confettiRef = useRef(null);
 
     return (
         <section
@@ -115,7 +117,6 @@ const Skills = () => {
                                             initial={{ rotate: 0 }}
                                             animate={{ rotate: 360 }}
                                             transition={{ duration: 1, delay: index * 0.1 }}
-                                            onError={(e) => (e.currentTarget.src = "/fallback-icon.png")}
                                         />
                                         <motion.img
                                             src={skill.darkIcon}
@@ -126,7 +127,6 @@ const Skills = () => {
                                             initial={{ rotate: 0 }}
                                             animate={{ rotate: 360 }}
                                             transition={{ duration: 1, delay: index * 0.1 }}
-                                            onError={(e) => (e.currentTarget.src = "/fallback-icon.png")}
                                         />
                                         <CardContent
                                             className="p-0"
@@ -140,13 +140,19 @@ const Skills = () => {
                                             }}
                                         >
                                             {skill.name}
+                                            <Confetti
+                                                ref={confettiRef}
+                                                className="absolute left-0 top-0 z-0 size-full"
+                                                onMouseEnter={() => {
+                                                    confettiRef.current?.fire({});
+                                                }}
+                                            />
                                         </CardContent>
                                     </Card>
                                 </motion.div>
                             </Grid>
                         ))}
                     </Grid>
-
                 </motion.div>
             </motion.div>
         </section>
