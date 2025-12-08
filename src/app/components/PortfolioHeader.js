@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "../Darkmode/Darkmode";
 import { Button } from "@/components/ui/button";
@@ -61,11 +61,65 @@ const PortfolioHeader = () => {
           ))}
           <ModeToggle />
           <motion.div
-            className="text-white hover:text-blue-600 transition"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
+            className="relative inline-block"
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <Link href={"https://fgtu.in/DSU1363"} target="_blank">  <button className="bg-rose-500 transition-colors duration-300 hover:bg-rose-700 px-5 py-2  rounded-sm">Hire Me</button></Link>
+            <Link href="https://www.linkedin.com/in/soigama-akhil-457333251" target="_blank" rel="noopener noreferrer">
+              {/* Back Glow (only visible on hover) */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-rose-500/40 via-pink-500/40 to-purple-600/40 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-700" />
+
+              {/* Main Button */}
+              <button
+                className={`
+                  relative px-8 py-4 rounded-xl font-bold text-lg tracking-wider
+                  bg-gradient-to-r from-rose-600 via-pink-600 to-purple-700
+                 text-white border-0
+                  overflow-hidden
+                  shadow-2xl
+                   transition-all duration-500
+                hover:shadow-rose-500/40 hover:shadow-[0_0_60px_-5px]
+                group
+                `}
+              >
+                {/* Shiny moving overlay */}
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+
+                {/* Button Text + Icon */}
+                <span className="relative flex items-center gap-3 justify-center">
+                  <span className="drop-shadow-lg">Hire Me</span>
+                  <motion.span
+                    animate={{ x: [0, 6, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+                  >
+                    <ArrowRight />
+                  </motion.span>
+                </span>
+              </button>
+
+              {/* Tiny floating particles on hover */}
+              <div className="absolute inset-0 pointer-events-none">
+                {[...Array(6)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute w-1 h-1 bg-pink-300 rounded-full"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                      y: [-20, -60],
+                      x: Math.sin(i) * 30,
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: i * 0.2,
+                      ease: "easeOut",
+                    }}
+                  />
+                ))}
+              </div>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -103,7 +157,7 @@ const PortfolioHeader = () => {
                     key={item}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 * index ,duration:0.2}}
+                    transition={{ delay: 0.2 * index, duration: 0.2 }}
                     whileHover={{ scale: 1.05 }}
                   >
                     <ScrollLink
@@ -125,11 +179,56 @@ const PortfolioHeader = () => {
                 ))}
               </motion.ul>
               <motion.div
-                className="flex mt-3 justify-center text-white hover:text-blue-600 transition"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
+                className="relative inline-block"
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <Link href={"https://fgtu.in/DSU1363"} target="_blank">  <button className="bg-rose-500 transition-colors duration-300 hover:bg-rose-700 px-5 py-2 rounded-sm">Hire Me</button></Link>
+                <Link href="https://www.linkedin.com/in/soigama-akhil-457333251/" target="_blank" rel="noopener noreferrer">
+                  {/* Back Glow (only visible on hover) */}
+                  <div className="absolute -inset-2 bg-gradient-to-r from-rose-500/40 via-pink-500/40 to-purple-600/40 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-700" />
+
+                  {/* Main Button */}
+                  <button
+                    className={"relative px-8 py-4 rounded-xl font-bold text-lg tracking-wider bg-gradient-to-r from-rose-600 via-pink-600 to-purple-700text-white border-0 overflow-hidden shadow-2xl transition-all duration-500hover:shadow-rose-500/40 hover:shadow-[0_0_60px_-5px] group"}
+                  >
+                    {/* Shiny moving overlay */}
+                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+
+                    {/* Button Text + Icon */}
+                    <span className="relative flex items-center gap-3 justify-center">
+                      <span className="drop-shadow-lg">Hire Me</span>
+                      <motion.span
+                        animate={{ x: [0, 6, 0] }}
+                        transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+                      >
+
+                      </motion.span>
+                    </span>
+                  </button>
+
+                  {/* Tiny floating particles on hover */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    {[...Array(6)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute w-1 h-1 bg-pink-300 rounded-full"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{
+                          opacity: [0, 1, 0],
+                          y: [-20, -60],
+                          x: Math.sin(i) * 30,
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: i * 0.2,
+                          ease: "easeOut",
+                        }}
+                      />
+                    ))}
+                  </div>
+                </Link>
               </motion.div>
             </SheetContent>
           </Sheet>

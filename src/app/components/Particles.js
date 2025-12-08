@@ -14,7 +14,7 @@ export function ParticlesDemo() {
   }, [resolvedTheme]);
 
   return (
-    <div className="fixed flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background">
+    <div className="fixed flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg  bg-background">
       <Particles
         className="absolute inset-0 z-0"
         quantity={100}

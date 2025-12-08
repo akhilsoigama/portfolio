@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Inter, Poppins } from "next/font/google";
 import { FadeIn, HoverScale, ScaleUp } from "../motion/Motion";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
+import ProfileImage from "./ProfileImage";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600", "700"] });
@@ -14,14 +15,15 @@ const HeroContent = () => {
   return (
     <section className="w-full h-full dark:bg-black/40" id="home">
       <div className="relative w-full h-full flex flex-col md:flex-row justify-start items-center z-20 px-4 py-12 md:py-20">
-        <div className="max-w-7xl mx-auto flex-1 flex flex-col md:flex-row justify-start items-center gap-8">
+        <div className="max-w-7xl mx-auto flex-1 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12">
+          {/* Left Text Content */}
           <div className="md:w-1/2 text-left">
             <FadeIn delay={0.3}>
               <div className="mb-6">
                 <Button className="flex justify-center items-center px-6 py-2 border border-gray-600 rounded-lg bg-transparent dark:hover:bg-gray-800/50 hover:bg-slate-200 transition-colors duration-300">
                   <SparkleIcon className="text-[#b49bff] mr-2 h-5 w-5" />
                   <span className={`${inter.className} dark:text-white text-black`}>
-                    Frontend Developer
+                    Full-Stack Developer
                   </span>
                 </Button>
               </div>
@@ -52,10 +54,8 @@ const HeroContent = () => {
                 </Typography>
 
                 <FadeIn delay={0.7}>
-                  <p className={`mt-4 text-lg sm:text-xl lg:text-2xl leading-relaxed ${inter.className}`}>
-                    As a dedicated and passionate front-end developer with a year of
-                    professional experience, I specialize in creating dynamic,
-                    responsive, and user-friendly web applications.
+                  <p className={`mt-4 text-lg sm:text-xl lg:text-xl leading-relaxed ${inter.className}`}>
+                    I am a Full-Stack Web Developer with strong expertise in building scalable, high-performance, and user-friendly web applications. I specialize in developing end-to-end solutions using modern technologies such as React, Vite, Next.js, Tailwind CSS, AdonisJS, Node.js, and MongoDB/PostgreSQL. With a deep understanding of both frontend and backend architectures, I create applications that are fast, secure, and optimized for real-world use.
                   </p>
                 </FadeIn>
 
@@ -63,7 +63,7 @@ const HeroContent = () => {
                   <div className="mt-8 flex flex-col sm:flex-row gap-4">
                     <div className="flex gap-4">
                       <Tooltip title="GitHub" arrow>
-                        <Link href="https://discord.com/channels/@me" target="_blank" passHref>
+                        <Link href="https://github.com" target="_blank" passHref>
                           <HoverScale>
                             <button className="dark:bg-white bg-slate-800/20 hover:bg-slate-200 dark:hover:bg-slate-400 p-3 rounded-lg backdrop-blur-md transition-all duration-300">
                               <img src="/github-142-svgrepo-com.svg" alt="GitHub" width={24} height={24} />
@@ -94,6 +94,21 @@ const HeroContent = () => {
                     </div>
                   </div>
                 </ScaleUp>
+              </div>
+            </FadeIn>
+          </div>
+          
+          <div className="md:w-1/2 flex justify-center items-center">
+            <FadeIn delay={0.5} direction="right">
+              <div className="relative flex justify-center items-center">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 dark:from-blue-500/10 dark:via-purple-500/10 dark:to-pink-500/10 rounded-full blur-3xl animate-pulse" />
+                
+                <div className="flex justify-center items-center">
+                  <ProfileImage />
+                </div>
+                
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 dark:from-cyan-500/20 dark:to-blue-500/20 rounded-full blur-xl animate-float"></div>
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-purple-500/30 to-pink-500/30 dark:from-purple-500/20 dark:to-pink-500/20 rounded-full blur-xl animate-float" style={{animationDelay: '1s'}} />
               </div>
             </FadeIn>
           </div>

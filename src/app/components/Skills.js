@@ -33,24 +33,24 @@ const skills = [
     name: "AdonisJS",
     icon: "https://cdn.worldvectorlogo.com/logos/adonisjs.svg"
   },
-  {
-    name: "Python",
-    icon:
-      "/python.svg"
-  },
-  {
-    name: "Pandas",
-    icon: "/pandas.svg"
-  },
-  {
-    name: "NumPy",
-    icon:
-      "/numpy.svg"
-  },
-  {
-    name: "Data Science",
-    icon: "https://cdn-icons-png.flaticon.com/512/5408/5408783.png"
-  }
+  // {
+  //   name: "Python",
+  //   icon:
+  //     "/python.svg"
+  // },
+  // {
+  //   name: "Pandas",
+  //   icon: "/pandas.svg"
+  // },
+  // {
+  //   name: "NumPy",
+  //   icon:
+  //     "/numpy.svg"
+  // },
+  // {
+  //   name: "Data Science",
+  //   icon: "https://cdn-icons-png.flaticon.com/512/5408/5408783.png"
+  // }
 ];
 
 const Skills = () => {
@@ -108,6 +108,7 @@ const Skills = () => {
                     borderRadius: "15px"
                   }}
                   whileTap={{ scale: 0.95 }}
+                  
                 >
                   <Card
                     className="p-4 flex items-center h-20 gap-3 backdrop-blur-lg shadow-xl border border-indigo-500/30 rounded-lg w-full"
@@ -122,6 +123,7 @@ const Skills = () => {
                       }
                     }}
                   >
+                    
                     <motion.img
                       src={skill.icon}
                       alt={skill.name}
@@ -148,13 +150,7 @@ const Skills = () => {
                       }}
                     >
                       {skill.name}
-                      <Confetti
-                        ref={confettiRef}
-                        className="absolute left-0 top-0 z-0 size-full"
-                        onMouseEnter={() => {
-                          confettiRef.current?.fire({});
-                        }}
-                      />
+                     
                     </CardContent>
                   </Card>
                 </motion.div>

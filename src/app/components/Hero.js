@@ -56,9 +56,9 @@ const Hero = () => {
                 <Certificate />
             </div> */}
 
-            <div className="relative z-30">
+            {/* <div className="relative z-30">
                 <SeminarAttended/>
-            </div>
+            </div> */}
             <div className="relative z-30">
                 <ContactPage />
             </div>
