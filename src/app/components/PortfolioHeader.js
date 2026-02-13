@@ -18,7 +18,7 @@ const PortfolioHeader = () => {
 
   return (
     <motion.header
-      className="p-4 w-full sticky top-0 z-50 backdrop-blur-lg shadow-md"
+      className="p-2 w-full sticky top-0 z-50 backdrop-blur-lg shadow-md"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -73,7 +73,7 @@ const PortfolioHeader = () => {
               {/* Main Button */}
               <button
                 className={`
-                  relative px-8 py-4 rounded-xl font-bold text-lg tracking-wider
+                  relative px-8 py-2 rounded-xl font-bold text-lg tracking-wider
                   bg-gradient-to-r from-rose-600 via-pink-600 to-purple-700
                  text-white border-0
                   overflow-hidden
@@ -190,7 +190,7 @@ const PortfolioHeader = () => {
 
                   {/* Main Button */}
                   <button
-                    className={"relative px-8 py-4 rounded-xl font-bold text-lg tracking-wider bg-gradient-to-r from-rose-600 via-pink-600 to-purple-700text-white border-0 overflow-hidden shadow-2xl transition-all duration-500hover:shadow-rose-500/40 hover:shadow-[0_0_60px_-5px] group"}
+                    className={"relative px-8 py-2 rounded-xl font-bold text-lg tracking-wider bg-gradient-to-r from-rose-600 via-pink-600 to-purple-700text-white border-0 overflow-hidden shadow-2xl transition-all duration-500hover:shadow-rose-500/40 hover:shadow-[0_0_60px_-5px] group"}
                   >
                     {/* Shiny moving overlay */}
                     <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />

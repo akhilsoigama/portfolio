@@ -42,7 +42,7 @@ const HeroContent = () => {
             </FadeIn>
 
             <FadeIn delay={0.5}>
-              <div className="mb-8">
+              <div className="mb-4">
                 <Typography
                   variant="h2"
                   component="h1"
@@ -54,13 +54,13 @@ const HeroContent = () => {
                 </Typography>
 
                 <FadeIn delay={0.7}>
-                  <p className={`mt-4 text-lg sm:text-xl lg:text-xl leading-relaxed ${inter.className}`}>
+                  <p className={`mt-2 text-lg sm:text-xl lg:text-xl leading-relaxed ${inter.className}`}>
                     I am a Full-Stack Web Developer with strong expertise in building scalable, high-performance, and user-friendly web applications. I specialize in developing end-to-end solutions using modern technologies such as React, Vite, Next.js, Tailwind CSS, AdonisJS, Node.js, and MongoDB/PostgreSQL. With a deep understanding of both frontend and backend architectures, I create applications that are fast, secure, and optimized for real-world use.
                   </p>
                 </FadeIn>
 
                 <ScaleUp delay={1.5}>
-                  <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                  <div className="mt-4 flex flex-col sm:flex-row gap-4">
                     <div className="flex gap-4">
                       <Tooltip title="GitHub" arrow>
                         <Link href="https://github.com" target="_blank" passHref>

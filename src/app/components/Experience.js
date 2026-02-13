@@ -1,156 +1,207 @@
-'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Briefcase, Calendar, Sparkles } from 'lucide-react';
+"use client";
+import React, { memo, useMemo } from "react";
+import Image from "next/image";
+import { Briefcase, Calendar } from "lucide-react";
 
-const Experience = () => {
-  const experiences = [
-    {
-      title: 'Frontend Developer Intern',
-      company: 'SULOK DIGITAL SOLUTION PRIVATE LIMITED',
-      duration: 'March 2024 - March 2025',
-      description:
-        'Built responsive, high-performance web applications using React, Tailwind, and modern tooling. Collaborated with designers and backend teams to deliver pixel-perfect, interactive UIs that scaled across devices.',
-      image: 'https://images.stockcake.com/public/5/e/6/5e6fb906-70e0-4ec9-9df9-fb564a8fec74_large/coder-at-work-stockcake.jpg',
-      gradient: 'from-blue-600 to-cyan-500',
-    },
-    {
-      title: 'Hospital Management System',
-      company: 'SULOK DIGITAL SOLUTION PRIVATE LIMITED',
-      duration: 'March 2025 - July 2025',
-      description:
-        'Led frontend development of a full-scale HMS using React + Vite and AdonisJS. Designed intuitive dashboards for doctors, patients, and admins with real-time updates and offline support.',
-      image: './hospital.webp',
-      gradient: 'from-emerald-500 to-teal-600',
-    },
-    {
-      title: 'Education Management System (PWA)',
-      company: 'Personal Project • Full-Stack',
-      duration: 'Aug 2025 - Present',
-      description:
-        'Developing a next-gen offline-first Education ERP as a Progressive Web App. Features include real-time sync, biometric attendance, fee management, and installable mobile experience.',
-      image: './education.png',
-      gradient: 'from-purple-600 to-pink-600',
-    },
-  ];
+/**
+ * @typedef {Object} ExperienceItem
+ * @property {string} title
+ * @property {string} company
+ * @property {string} duration
+ * @property {string} description
+ * @property {string} image
+ * @property {string} imageAlt
+ * @property {boolean} priority
+ * @property {boolean} unoptimized
+ * @property {string[]} techStack
+ * @property {string[]} highlights
+ */
+
+/**
+ * @param {{ exp: ExperienceItem, align: "left" | "right" }} props
+ */
+const ExperienceCard = memo(function ExperienceCard({ exp, align }) {
+  const isLeft = align === "left";
 
   return (
-    <section id="experience" className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-gray-50 to-white dark:from-black/40 dark:to-gray-900/30">
-      {/* Background Glows – Softened for light mode */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-purple-200/30 dark:bg-purple-600/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-cyan-200/30 dark:bg-cyan-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
-      </div>
-
-      <div className="max-w-7xl mx-auto">
-        {/* Section Title – Better contrast */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent dark:from-cyan-400 dark:via-purple-400 dark:to-pink-400">
-            Experience
-          </h2>
-          <p className="mt-4 text-gray-600 dark:text-gray-400 text-lg">Crafting digital magic since 2024</p>
-        </motion.div>
-
-        {/* Timeline Container */}
-        <div className="relative">
-          {/* Vertical Timeline Line – Softer for light mode */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-transparent via-indigo-300/50 to-transparent dark:via-purple-500/30 hidden lg:block">
-            <div className="absolute inset-0 w-full bg-gradient-to-b from-blue-400 via-indigo-400 to-purple-400 blur-sm animate-pulse dark:from-cyan-400 dark:via-purple-500 dark:to-pink-500" />
+    <li
+      className={`relative flex ${isLeft ? "lg:justify-start" : "lg:justify-end"} justify-center`}
+    >
+      <div className="absolute left-1/2 top-6 hidden h-3 w-3 -translate-x-1/2 rounded-full bg-indigo-500 ring-8 ring-white dark:bg-cyan-400 dark:ring-gray-950 lg:block" />
+      <div
+        className={`
+          relative w-full max-w-2xl
+          ${isLeft ? "lg:pr-16" : "lg:pl-16"}
+        `}
+      >
+        <article className="group rounded-3xl border border-gray-200/80 bg-white/80 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-white/5">
+          <div className="relative h-56 md:h-72 overflow-hidden rounded-t-3xl">
+            <Image
+              src={exp.image}
+              alt={exp.imageAlt}
+              fill
+              sizes="(max-width: 768px) 100vw, 700px"
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              priority={exp.priority}
+              unoptimized={exp.unoptimized}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/10 to-transparent" />
           </div>
 
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.3 }}
-              className={`relative flex items-center justify-center mb-20 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                } flex-col`}
-            >
-              {/* Timeline Dot – Better glow */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-cyan-400 dark:to-purple-500 rounded-full ring-8 ring-white/50 dark:ring-black/50 shadow-[0_0_20px_rgba(99,102,241,0.4)] dark:shadow-[0_0_20px_rgba(168,85,247,0.6)] z-20 hidden lg:block" />
+          <div className="relative p-7 md:p-8 space-y-5">
+            <div className="flex items-center gap-3 text-indigo-600 dark:text-cyan-400">
+              <Briefcase className="w-5 h-5" aria-hidden="true" />
+              <span className="text-xs font-semibold uppercase tracking-[0.18em]">
+                {exp.company}
+              </span>
+            </div>
 
-              {/* Experience Card */}
-              <div
-                className={`
-                  relative w-full max-w-2xl group
-                  ${index % 2 === 0 ? 'lg:mr-auto lg:pr-20' : 'lg:ml-auto lg:pl-20'}
-                `}
-              >
-                {/* Featured Badge */}
-                {exp.featured && (
-                  <div className="absolute -top-4 -right-4 z-30">
-                    <span className="flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
-                      <Sparkles className="w-4 h-4" /> Featured Project
-                    </span>
-                  </div>
-                )}
+            <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">
+              {exp.title}
+            </h3>
 
-                <motion.div
-                  whileHover={{ y: -12, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="relative overflow-hidden rounded-3xl backdrop-blur-xl bg-white/80 dark:bg-white/5 border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-2xl"
-                >
-                  {/* Gradient Border Glow – Subtle */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${exp.gradient} opacity-0 group-hover:opacity-10 dark:group-hover:opacity-30 transition duration-700`} />
+            <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+              <Calendar className="w-4 h-4" aria-hidden="true" />
+              <span>{exp.duration}</span>
+            </div>
 
-                  {/* Image */}
-                  <div className="relative h-64 md:h-80 overflow-hidden">
-                    <img
-                      src={exp.image}
-                      alt={exp.title}
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-800/70 dark:from-black/80 via-transparent to-transparent" />
-                  </div>
+            <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              {exp.description}
+            </p>
 
-                  {/* Content */}
-                  <div className="relative p-8 space-y-5">
-                    <div className="flex items-center gap-3 text-indigo-600 dark:text-cyan-400">
-                      <Briefcase className="w-6 h-6" />
-                      <span className="text-sm font-medium uppercase tracking-wider">{exp.company}</span>
-                    </div>
-
-                    <h3 className="text-3xl font-bold text-gray-800 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 dark:group-hover:from-cyan-400 dark:group-hover:to-pink-400 transition-all duration-500">
-                      {exp.title}
-                    </h3>
-
-                    <div className="flex items-center gap-2 text-purple-500 dark:text-purple-300">
-                      <Calendar className="w-5 h-5" />
-                      <span className="text-sm">{exp.duration}</span>
-                    </div>
-
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-                      {exp.description}
-                    </p>
-
-                    <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-                      {[...Array(5)].map((_, i) => (
-                        <motion.div
-                          key={i}
-                          className="absolute bottom-0 w-1 h-1 bg-indigo-400 dark:bg-cyan-400 rounded-full"
-                          initial={{ y: 100, x: (i - 2) * 90 }}
-                          animate={{ y: -100 }}
-                          transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            delay: i * 0.4,
-                            ease: "linear",
-                          }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
+                Tech Stack
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {exp.techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-700 dark:border-white/10 dark:bg-white/10 dark:text-gray-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
-            </motion.div>
-          ))}
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
+                Key Highlights
+              </p>
+              <ul className="mt-3 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                {exp.highlights.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-400 dark:bg-cyan-400" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </li>
+  );
+});
+
+const Experience = () => {
+  const experiences = useMemo(
+    () => [
+      {
+        title: "Frontend Developer Intern",
+        company: "SULOK DIGITAL SOLUTION PRIVATE LIMITED",
+        duration: "March 2024 - March 2025",
+        description:
+          "Delivered production-ready web interfaces for client projects, translating product requirements into responsive, accessible experiences while coordinating with design and backend teams.",
+        image:
+          "https://images.stockcake.com/public/5/e/6/5e6fb906-70e0-4ec9-9df9-fb564a8fec74_large/coder-at-work-stockcake.jpg",
+        imageAlt: "Developer reviewing a web interface on a desktop screen",
+        priority: true,
+        unoptimized: true,
+        techStack: ["React", "Tailwind CSS", "JavaScript", "REST APIs", "Figma"],
+        highlights: [
+          "Implemented reusable UI components that reduced page build time and improved consistency across modules.",
+          "Optimized layouts and assets to deliver fast load times across mobile and desktop breakpoints.",
+          "Collaborated on API integration patterns to keep state management predictable and maintainable.",
+        ],
+      },
+      {
+        title: "Hospital Management System",
+        company: "SULOK DIGITAL SOLUTION PRIVATE LIMITED",
+        duration: "March 2025 - July 2025",
+        description:
+          "Led the frontend build for a multi-role hospital platform, streamlining clinical workflows for doctors, patients, and administrators with clear dashboards and real-time visibility.",
+        image: "/hospital.webp",
+        imageAlt: "Hospital management dashboard with key metrics",
+        priority: false,
+        unoptimized: false,
+        techStack: ["React", "Vite", "AdonisJS", "Charting", "Role-Based UI"],
+        highlights: [
+          "Designed role-specific navigation and data views to reduce task completion time for core workflows.",
+          "Built resilient UI states for offline and intermittent connectivity scenarios.",
+          "Integrated real-time updates for appointments, prescriptions, and admissions.",
+        ],
+      },
+      {
+        title: "Education Management System (PWA)",
+        company: "Personal Project • Full-Stack",
+        duration: "Aug 2025 - Present",
+        description:
+          "Architected an offline-first education ERP to centralize attendance, fees, and academic operations with installable PWA capabilities and reliable data synchronization.",
+        image: "/education.png",
+        imageAlt: "Education management system interface on a laptop",
+        priority: false,
+        unoptimized: false,
+        techStack: ["React.js + Vite", "PWA", "IndexedDB", "Adonis.js", "PostgreSQL","Role-Based UI"],
+        highlights: [
+          "Designed data sync flows to safely reconcile offline activity with the server.",
+          "Implemented attendance and fee management modules with audit-ready histories.",
+          "Focused on performance by lazy-loading heavy screens and optimizing queries.",
+        ],
+      },
+    ],
+    []
+  );
+
+  return (
+    <section
+      id="experience"
+      aria-labelledby="experience-title"
+      className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white py-20 px-6 dark:from-black/40 dark:via-gray-950/40 dark:to-gray-950/30"
+    >
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-10 left-1/2 h-80 w-[46rem] -translate-x-1/2 rounded-full bg-indigo-200/35 blur-3xl dark:bg-cyan-500/10" />
+      </div>
+
+      <div className="mx-auto max-w-6xl">
+        <header className="text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">
+            Experience
+          </p>
+          <h2
+            id="experience-title"
+            className="mt-4 text-4xl md:text-5xl font-semibold text-gray-900 dark:text-white"
+          >
+            Building products with real-world impact
+          </h2>
+          <p className="mt-4 text-base md:text-lg text-gray-600 dark:text-gray-400">
+            Hands-on delivery across SaaS, healthcare, and education platforms
+          </p>
+        </header>
+
+        <div className="relative mt-14">
+          <div className="pointer-events-none absolute left-1/2 top-2 hidden h-[calc(100%-1rem)] w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-gray-300/70 to-transparent dark:via-white/15 lg:block" />
+
+          <ol className="space-y-12 lg:space-y-16">
+            {experiences.map((exp, index) => (
+              <ExperienceCard
+                key={exp.title}
+                exp={exp}
+                align={index % 2 === 0 ? "left" : "right"}
+              />
+            ))}
+          </ol>
         </div>
       </div>
     </section>
