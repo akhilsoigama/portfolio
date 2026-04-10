@@ -48,7 +48,7 @@ const ProfileImage = () => {
             ) : (
               <>
                 <img
-                  src="./akhil.jpg"
+                  src="./akhil.png"
                   alt="Akhil - Portfolio"
                   className={`
                     w-full h-full object-cover transition-all duration-700 ease-out
